@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Ui Design</title>
+    <meta name="keywords" content="Ui Design" />
+    <meta name="description" content="Ui Design">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="#">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="index.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".data-header-col2").click(function () {
+                $(".data-asc-order").toggleClass("data-desc-order");
+            });
+        });
+
+        $(function () {
+            $("div").slice(0, 5).show(); // firste time load
+            $("#loadMore").click(function (e) { // click event for load more
+                e.preventDefault();
+                $("div:hidden").slice(0, 2).show(); // select next 2 hidden divs and show them
+                if ($("div:hidden").length == 0) { // check if any hidden divs still exist
+
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <section>
+        <div class="outerbox" id="app">
+            <div class="data-header">
+                <div class="data-header-col1">Account</div>
+                <div class="data-header-col2">
+                    <div class="data-asc-order">Available Cash</div>
+                    <div class="clr"></div>
+                    <div class="data-header-sec-row">Today's Change</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="data-row">
+                <div class="data-col1">IRA - 5200</div>
+                <div class="data-col2">
+                    $5,767.67
+                    <div class="data-sec-text-row red">-28%/$78,776.76</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="data-row">
+                <div class="data-col1">AAA - 1812</div>
+                <div class="data-col2">
+                    $2,010,926.10
+                    <div class="data-sec-text-row green">+0.21%/$38,881.63</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="data-row">
+                <div class="data-col1">AAA - 3810</div>
+                <div class="data-col2">
+                    $10,050,054.07
+                    <div class="data-sec-text-row green">+0.07%/$8,916.69</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+
+            <div class="data-row hide">
+                <div class="data-col1">IRA - 5200</div>
+                <div class="data-col2">
+                    $5,767.67
+                    <div class="data-sec-text-row green">-28%/$78,776.76</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="data-row hide">
+                <div class="data-col1">IRA - 5200</div>
+                <div class="data-col2">
+                    $5,767.67
+                    <div class="data-sec-text-row green">-28%/$78,776.76</div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="data-load-box"><a href="#" id="loadMore" class="data-load-nav">Load more</a></div>
+
+        </div>
+    </section>
+</body>
+</html>
